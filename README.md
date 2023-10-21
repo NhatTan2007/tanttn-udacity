@@ -1,7 +1,7 @@
 # tanttn-udacity
 
 
-https://github.com/tanttn-udacity/tanttn-udacity/actions/workflows/pythonapp.yml/badge.svg
+![Alt text](https://github.com/tanttn-udacity/tanttn-udacity/actions/workflows/pythonapp.yml/badge.svg)
 
 # GitHub Actions result:
 
