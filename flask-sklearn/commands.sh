@@ -2,8 +2,8 @@
 
 resourceGroup="tanttn-udacity"
 location="eastus"
-azWebApp="tanttnudacity"
-azWebAppPlan="tanttnudacity"
+azWebApp="tanttnudacitydevops"
+azWebAppPlan="tanttnudacitydevops"
 azWebAppRuntime="PYTHON:3.8"
 
 az group create -n $resourceGroup -l $location
