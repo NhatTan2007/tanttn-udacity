@@ -1,4 +1,4 @@
-FROM python:3.7.3-stretch
+FROM ubuntu:latest
 
 # Working Directory
 WORKDIR /app
