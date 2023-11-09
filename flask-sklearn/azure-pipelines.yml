@@ -41,11 +41,19 @@ stages:
     - script: |
         python -m venv antenv
         source antenv/bin/activate
-        python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
+        make install
       workingDirectory: $(projectRoot)/flask-sklearn
-      displayName: "Install requirements"
+      displayName: "Install dependencies"
+
+    - script: |
+        make lint
+      workingDirectory: $(projectRoot)/flask-sklearn
+      displayName: "Lint with pylint"
+    - script: |
+        make test
+      workingDirectory: $(projectRoot)/flask-sklearn
+      displayName: "Test with pytest"
+      
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
