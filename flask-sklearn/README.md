@@ -45,9 +45,6 @@ Web App Running
 Web App Prediction
 ![Alt text](images/PredictionAzureAppServiceAzurePowerShell.jpg)
 
-
-
-
 * Output of streamed log files from deployed application
 Web App Stream Logs
 ![Alt text](images/AzureWebAppLogs.jpg)
