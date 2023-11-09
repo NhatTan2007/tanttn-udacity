@@ -30,11 +30,23 @@
 * Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
 The output should look similar to this:
 
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
+Success Azure Pipelines
+![Alt text](images/SuccessAzurePipelines.jpg)
+
+Web App
+![Alt text](images/AzureAppServiceFlaskApp.jpg)
+
+Web App with Azure Pipelines
+![Alt text](images/WebAppWithAzurePipelines.jpg)
+
+Web App Running
+![Alt text](images/RunningAzureWebApp.jpg)
+
+Web App Prediction
+![Alt text](images/PredictionAzureAppServiceAzurePowerShell.jpg)
+
+Web App Stream Logs
+![Alt text](images/AzureWebAppLogs.jpg)
 
 * Output of streamed log files from deployed application
 
