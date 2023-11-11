@@ -5,6 +5,7 @@ class UserBehavior(TaskSet):
     """ on_start is called when a Locust start before any task is scheduled """
         self.index()
 
+    @task(1)
     def index(self):
          self.client.get("/")
 
