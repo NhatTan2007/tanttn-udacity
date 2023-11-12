@@ -1,61 +1,117 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+Our objective in this project is to construct a new Github repository from the ground up and establish the necessary framework for executing both Continuous Integration and Continuous Delivery.
+
+To accomplish this, we will utilize Github Actions in conjunction with a Makefile, requirements.txt, and our application code to execute an initial linting, testing, and installation process.
+
+Additionally, we will integrate this project with Azure Pipelines to facilitate Continuous Delivery to Azure App Service.
+Throughout this endeavor, we will leverage Azure Cloud Shell.
 
 ## Project Plan
+
 <TODO: Project Plan
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+- Trello Board (https://trello.com/b/DvAKdGrF/azuredevops)
+- Master plan (https://docs.google.com/spreadsheets/d/13jDmOAleeWOlJFVFIblrlnvS5kW3yaabrFM2MoagHjg/edit#gid=374250031)
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+- Architectural Diagram
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+![Alt text](images/ArchitecturalDiagram.jpg)
 
-* Project running on Azure App Service
+### Configuring Github
+- First of all, we need to create a ssh key for access to Github.
 
-* Project cloned into Azure Cloud Shell
+- Create a ssh key
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+  ```bash
+  ssh-keygen -t rsa -b 2048 -C "nhattan2007@gmail.com"
+  ```
 
-* Output of a test run
+- Copy your key to SSH and GPG keys (https://github.com/settings/keys)
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+Screenshot of SSH Key in Github
+![Alt text](screenshots/git-ssh-key.png)
 
-* Running Azure App Service from Azure Pipelines automatic deployment
+### Project Locally
+- Cloned Project into Azure Cloud Shell
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
+![Alt text](images/GitClonedAzure%20PowerShell.jpg)
 
-Success Azure Pipelines
-![Alt text](images/SuccessAzurePipelines.jpg)
+- Create and active virtual env:
 
-Web App
+  ```bash
+    python3 -m venv ~/.tanttn-udacity
+    source ~/.tanttn-udacity/bin/activate
+  ```
+
+- Install dependencies and make test, lint with Make file:
+
+![Alt text](images/MakefileResult.jpg)
+
+- Run application
+
+```bash
+    export FLASK_APP=app.py
+    flask run
+```
+
+### Azure Web App
+
+- Run script to create web app and first deployed to web app
+
+```bash
+    ./commands.sh
+```
+
+- Web App was created after run script (your can modify variables by your self at that file)
 ![Alt text](images/AzureAppServiceFlaskApp.jpg)
 
-Web App with Azure Pipelines
-![Alt text](images/WebAppWithAzurePipelines.jpg)
+- Loadtest with web app by Locust (after deployed by Azure DevOps Pipelines)
+![Alt text](images/RunningLocustLoadTest.jpg)
 
-Web App Running
+### Azure DevOps
+
+- Go to Azure Devops > Create new project
+
+- Go to Project Settings > Service Connections > New Service Connections
+![Alt text](images/Service-connection.jpg)
+
+- Select Azure Resource Manager > Select your Resource Group and Subscription (Also checkbox Grant access permission to all pipelines)
+![Alt text](images/ConfigServiceConnection.jpg)
+
+- Back to project Pipelines > New pipeline > Select Github > Grant access to your github
+![Alt text](images/select-github-pipelines.jpg)
+
+- Select your repository > Select Configure template
+![Alt text](images/Createtemplatepipeline.jpg)
+
+- Select your subscription > Select your web app which you want to deploy
+![Alt text](images/pipelinewebapp.jpg)
+
+- Successful deploy of the project in Azure Pipelines.
+![Alt text](images/SuccessAzurePipelines.jpg)
+
+- Project running on Azure App Service
 ![Alt text](images/RunningAzureWebApp.jpg)
 
-Web App Prediction
-![Alt text](images/PredictionAzureAppServiceAzurePowerShell.jpg)
+- Web App with Azure Pipelines
+![Alt text](images/WebAppWithAzurePipelines.jpg)
 
-* Output of streamed log files from deployed application
-Web App Stream Logs
+- Web App Deployed Logs
+![Alt text](images/WebAppDeployedLogs.jpg)
+
+- Output of streamed log files from deployed application
+  Web App Stream Logs
+
 ![Alt text](images/AzureWebAppLogs.jpg)
-> 
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+- Upgrade to newer python version (example that I did is 3.8)
+- Add configuration key by KeyVault.
 
-## Demo 
+## Demo
 
 <TODO: Add link Screencast on YouTube>
-
-
