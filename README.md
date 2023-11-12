@@ -1,3 +1,5 @@
+
+
 # Overview
 
 Our objective in this project is to construct a new Github repository from the ground up and establish the necessary framework for executing both Continuous Integration and Continuous Delivery.
@@ -31,6 +33,11 @@ Throughout this endeavor, we will leverage Azure Cloud Shell.
 
 - Screenshot of SSH Key in Github
 ![Alt text](images/sshKey.jpg)
+
+- Run Github Actions
+![Alt text](https://github.com/tanttn-udacity/tanttn-udacity/actions/workflows/pythonapp.yml/badge.svg)
+
+![Alt text](images/githubaction.png)
 
 ### Project Locally
 - Cloned Project into Azure Cloud Shell
