@@ -9,8 +9,6 @@ Throughout this endeavor, we will leverage Azure Cloud Shell.
 
 ## Project Plan
 
-<TODO: Project Plan
-
 - Trello Board (https://trello.com/b/DvAKdGrF/azuredevops)
 - Master plan (https://docs.google.com/spreadsheets/d/13jDmOAleeWOlJFVFIblrlnvS5kW3yaabrFM2MoagHjg/edit#gid=374250031)
 
@@ -31,12 +29,11 @@ Throughout this endeavor, we will leverage Azure Cloud Shell.
 
 - Copy your key to SSH and GPG keys (https://github.com/settings/keys)
 
-Screenshot of SSH Key in Github
-![Alt text](screenshots/git-ssh-key.png)
+- Screenshot of SSH Key in Github
+![Alt text](images/sshKey.jpg)
 
 ### Project Locally
 - Cloned Project into Azure Cloud Shell
-
 ![Alt text](images/GitClonedAzure%20PowerShell.jpg)
 
 - Create and active virtual env:
@@ -47,7 +44,6 @@ Screenshot of SSH Key in Github
   ```
 
 - Install dependencies and make test, lint with Make file:
-
 ![Alt text](images/MakefileResult.jpg)
 
 - Run application
@@ -56,6 +52,9 @@ Screenshot of SSH Key in Github
     export FLASK_APP=app.py
     flask run
 ```
+
+- Run prediction with local at Azure Cloud Shell
+![Alt text](images/PredictionLocalAzurePowerShell.jpg)
 
 ### Azure Web App
 
