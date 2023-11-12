@@ -10,7 +10,7 @@ Throughout this endeavor, we will leverage Azure Cloud Shell.
 ## Project Plan
 
 - [Trello Board](https://trello.com/b/DvAKdGrF/azuredevops)
-- [Master plan](https://docs.google.com/spreadsheets/d/13jDmOAleeWOlJFVFIblrlnvS5kW3yaabrFM2MoagHjg/edit#gid=374250031)
+- [Master plan](https://docs.google.com/spreadsheets/d/e/2PACX-1vRM8P94FRDbFilQWFvaSy6SFM6gJvpEhMLXAhQV13f9_vVSkxZLY9rQ-1zhehMBXfJScRjXonAmt9V9/pubhtml)
 
 ## Instructions
 
